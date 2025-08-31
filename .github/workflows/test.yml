@@ -1,4 +1,4 @@
-name: Linting
+name: Testing
 
 on:
   push:
@@ -16,8 +16,8 @@ jobs:
         with:
           python-version: '>=3.9 <3.14'
 
-      - run: pip install black isort
+      - run: pip install -e .
 
-      - run: isort --check --diff hex_modifier_tool tests
+      - run: pip install pytest
 
-      - run: black --check --diff hex_modifier_tool tests
+      - run: pytest tests
