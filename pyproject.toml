@@ -21,3 +21,10 @@ Issues = "https://github.com/gumulka/hex_modifier_tool/issues"
 [build-system]
 requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 120
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"

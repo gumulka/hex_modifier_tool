@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-from argparse import ArgumentParser
 import sys
+import zlib
+from argparse import ArgumentParser
 
 import intelhex
-import zlib
 
 
 def ti_cc23xx_offsets():
