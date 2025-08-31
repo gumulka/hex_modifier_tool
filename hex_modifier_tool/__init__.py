@@ -46,10 +46,10 @@ def hex_crc_insert(filename: str, offsets: list):
     handle.tofile(filename, format=format)
 
 
-if __name__ == "__main__":
+def parse_and_run(argv) -> int:
     crc32sums = []
 
-    parser = ArgumentParser(prog=sys.argv[0])
+    parser = ArgumentParser(prog=argv[0])
     parser.add_argument("filename", type=str, help="File to process")
     parser.add_argument(
         "-d",
@@ -67,7 +67,7 @@ if __name__ == "__main__":
         help="start,end,dest: calculate crc32 from start till end and write it to dest. Can be given multple times.",
     )
 
-    args = parser.parse_args(sys.argv[1:])
+    args = parser.parse_args(argv[1:])
 
     if args.device == "ti_cc23xx":
         crc32sums.extend(ti_cc23xx_offsets())
@@ -79,6 +79,15 @@ if __name__ == "__main__":
 
     if len(crc32sums) == 0:
         print("There are no crc32sums to be calculated. Aborting!")
-        sys.exit(1)
+        return -1
 
     hex_crc_insert(args.filename, crc32sums)
+    return 0
+
+
+def main():
+    sys.exit(parse_and_run(sys.argv))
+
+
+if __name__ == "__main__":
+    main()
