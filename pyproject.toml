@@ -1,6 +1,6 @@
 [project]
 name = "hex_modifier_tool"
-version = "0.0.1"
+version = "0.1.0"
 authors = [
   { name="Fabian Pflug", email="fabian.pflug@gumulka.eu" },
 ]
@@ -23,10 +23,6 @@ Issues = "https://github.com/gumulka/hex_modifier_tool/issues"
 
 [project.scripts]
 hex_modifier_tool = 'hex_modifier_tool:main'
-
-[build-system]
-requires = ["hatchling >= 1.26"]
-build-backend = "hatchling.build"
 
 [tool.black]
 line-length = 120
