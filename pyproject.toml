@@ -1,0 +1,23 @@
+[project]
+name = "hex_modifier_tool"
+version = "0.0.1"
+authors = [
+  { name="Fabian Pflug", email="fabian.pflug@gumulka.eu" },
+]
+description = "Small to to modify hex files"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/gumulka/hex_modifier_tool"
+Issues = "https://github.com/gumulka/hex_modifier_tool/issues"
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
